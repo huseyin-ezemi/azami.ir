@@ -1,0 +1,259 @@
+@using Radyn.Web.Mvc;
+@model Product
+@{
+ViewBag.Title = Resources.Common.Delete;
+}
+@section Head{}
+@section PageTitle{@Resources.Common.Delete}
+@section PageAction { 
+ <div class="button-div"> 
+@Html.Radyn().ImageActionLink().Text(Resources.Common.Delete).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/Delete-Close.png")).ImagePosition(ImageActionLink.Position.Right).ImageWidth("15").Submit().Render();}
+</div>
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().NavigateUrl(Url.Content("~/dbo/Product/Index")).Text(Resources.Common.Return).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/go-back.png")).ImagePosition(ImageActionLink.Position.Right).Render();}
+</div>
+}
+@section PageActionDown { 
+ <div class="button-div"> 
+@Html.Radyn().ImageActionLink().Text(Resources.Common.Delete).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/Delete-Close.png")).ImagePosition(ImageActionLink.Position.Right).ImageWidth("15").Submit().Render();}
+</div>
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().NavigateUrl(Url.Content("~/dbo/Product/Index")).Text(Resources.Common.Return).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/go-back.png")).ImagePosition(ImageActionLink.Position.Right).Render();}
+</div>
+}
+@if (Model != null)
+{
+@Html.ValidationSummary(true)
+<div class="radynForm">
+<div class="fit">
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductId
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.Id)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductName
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.Name)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductNameTR
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.NameTR)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductDescription
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.Description)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductDescriptionTR
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.DescriptionTR)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductDetail
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.Detail)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductDetailTR
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.DetailTR)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductPrice
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.Price)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductProductTypeId
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.ProductTypeId)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductCurrencyTypeId
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.CurrencyTypeId)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductCategoryIdArray
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.CategoryIdArray)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductIsAutoComplete
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@(Model.IsAutoComplete ? Resources.Common.Enable : Resources.Common.Disable)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductObjectValue
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.ObjectValue)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductImgUrl
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.ImgUrl)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductRecBy
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.RecBy)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductRecDate
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.RecDate)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductRecStatus
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.RecStatus)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductHasTax
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@(Model.HasTax ? Resources.Common.Enable : Resources.Common.Disable)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductTaxRate
+</div>
+</div>
+<div class="table-row-item">
+<div class="item">
+@Html.DisplayFor(model => model.TaxRate)
+</div>
+</div>
+</div>
+</div>
+</div>
+}

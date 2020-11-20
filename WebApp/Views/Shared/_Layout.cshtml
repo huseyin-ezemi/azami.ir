@@ -1,0 +1,70 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
+<html lang="@Localizer["PageLang"]">
+<head>
+    <title>@Localizer["PageTitle"] - azami.ir</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="icon" type="image/png" href="/img/me.jpg" />
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png" />
+    <meta name="description" content="@Localizer["PageDesc"]" />
+    <meta name="keywords" content="@Localizer["PageKeywords"]" />
+    <link rel="canonical" href="https://azami.ir" />
+    <meta property="og:type" content="page" />
+    <meta property="og:title" content='@Localizer["PageTitle"]' />
+    <meta property="og:image" content="https://azami.ir/img/me.jpg" />
+    <meta property="og:description" content="@Localizer["og-desc"]" />
+    <meta property="og:url" content="https://azami.ir" />
+    <meta property="og:site_name" content="Hossein Azami" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="https://azami.ir" />
+    <meta name="twitter:creator" content="@("@AndarabiAzami")" />
+    <script type="application/ld+json">
+        {
+        "@("@type")":"BlogPosting",
+        "headline":"@Localizer["og-desc"]",
+        "url":"https://azami.ir",
+        "dateModified":"2020-09-12T00:00:00+00:00",
+        "datePublished":"2020-09-12T00:00:00+00:00",
+        "mainEntityOfPage":{
+        "@("@type")":"WebPage",
+        "@("@id")":"https://azami.ir"},
+        "image":"https://azami.ir/img/me.jpg",
+        "description":"@Localizer["PageDesc"]",
+        "@("@context")":"http://schema.org"}
+    </script>
+    <meta name="author" content="Hossein Azami">
+    @RenderSection("Head", false)
+</head>
+<body class="@ViewBag.BodyClass">
+    @RenderBody()
+    <input type="hidden" id="currentPage" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174967097-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-174967097-1');
+    </script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/font-awesome.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script>
+        $(document).ready(function () {
+            contentLoader("about");
+            window.addEventListener("resize", contentLoader);
+
+        });
+    </script>
+</body>
+</html>

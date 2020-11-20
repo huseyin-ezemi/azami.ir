@@ -1,0 +1,274 @@
+@using Radyn.Web.Mvc;
+@using Radyn.WebApp.AppCode.Base
+@model Product
+@{
+ViewBag.Title = Resources.Common.Create;
+}
+@section Head{}
+@section PageTitle{@Resources.Common.Create}
+@section PageAction { 
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().Text(Resources.Common.Save).Algn(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/Save.png")).ImagePosition(ImageActionLink.Position.Right).Submit().Render();}
+</div>
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().Text(Resources.Common.SaveAndNewLanguage).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/Save.png")).ImagePosition(ImageActionLink.Position.Right).OtherAttribute(new { onclick = "FormSubmitAction('" + FormSubmitAction.SaveAndNewLanguage + "'); " }).Render();}
+</div>
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().Text(Resources.Common.SaveAndNew).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/Save.png")).ImagePosition(ImageActionLink.Position.Right).OtherAttribute(new { onclick = "FormSubmitAction('" + FormSubmitAction.SaveAndNew + "'); " }).Render();}
+</div>
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().NavigateUrl(Url.Content("~/dbo/Product/Index")).Text(Resources.Common.Return).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/go-back.png")).ImagePosition(ImageActionLink.Position.Right).Render();}
+</div>
+}
+@section PageActionDown { 
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().Text(Resources.Common.Save).Algn(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/Save.png")).ImagePosition(ImageActionLink.Position.Right).Submit().Render();}
+</div>
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().Text(Resources.Common.SaveAndNewLanguage).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/Save.png")).ImagePosition(ImageActionLink.Position.Right).OtherAttribute(new { onclick = "FormSubmitAction('" + FormSubmitAction.SaveAndNewLanguage + "'); " }).Render();}
+</div>
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().Text(Resources.Common.SaveAndNew).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/Save.png")).ImagePosition(ImageActionLink.Position.Right).OtherAttribute(new { onclick = "FormSubmitAction('" + FormSubmitAction.SaveAndNew + "'); " }).Render();}
+</div>
+ <div class="button-div"> 
+@{Html.Radyn().ImageActionLink().NavigateUrl(Url.Content("~/dbo/Product/Index")).Text(Resources.Common.Return).Align(ImageActionLink.Alignment.Left).ImageUrl(Url.Content("~/Content/Images/go-back.png")).ImagePosition(ImageActionLink.Position.Right).Render();}
+</div>
+}
+@if (Model != null)
+{
+@Html.ValidationSummary(true)
+<div class="radynForm">
+<div class="fit">
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductId
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.Id)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductName
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.Name)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductNameTR
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.NameTR)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductDescription
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.Description)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductDescriptionTR
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.DescriptionTR)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductDetail
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.Detail)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductDetailTR
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.DetailTR)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductPrice
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.Price)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductProductTypeId
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.ProductTypeId)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductCurrencyTypeId
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.CurrencyTypeId)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductCategoryIdArray
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.CategoryIdArray)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductIsAutoComplete
+</div>
+</div>
+<div class="table-row-item drp">
+<div class="item">
+@Html.RadioButtonFor(model => model.IsAutoComplete,true)@Resources.Common.Enable
+@Html.RadioButtonFor(model => model.IsAutoComplete,false)@Resources.Common.Disable
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductObjectValue
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.ObjectValue)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductImgUrl
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.ImgUrl)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductRecBy
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.RecBy)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductRecDate
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.RecDate)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductRecStatus
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.RecStatus)
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductHasTax
+</div>
+</div>
+<div class="table-row-item drp">
+<div class="item">
+@Html.RadioButtonFor(model => model.HasTax,true)@Resources.Common.Enable
+@Html.RadioButtonFor(model => model.HasTax,false)@Resources.Common.Disable
+</div>
+</div>
+</div>
+<div>
+<div class="table-row-cap">
+<div class="item">
+@Resources.dbo.ProductTaxRate
+</div>
+</div>
+<div class="table-row-item ">
+<div class="item">
+@Html.EditorFor(model => model.TaxRate)
+</div>
+</div>
+</div>
+</div>
+</div>
+}

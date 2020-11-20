@@ -1,0 +1,303 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@section Head{
+}
+<div class="s-container">
+    <div class="header">
+        <div class="menu">
+            <ul class="title box">
+                <li><a href="#about" onclick="contentLoader('about');"><i class="fa fa-user"></i><br />@Localizer["About"]</a></li>
+                <li><a href="#skills" onclick="contentLoader('skills');"><i class="fa fa-user-check"></i><br />@Localizer["Skill"]</a></li>
+                <li><a href="#works" id="a_skills" onclick="contentLoader('works');"><i class="fa fa-laptop-code"></i><br />@Localizer["Experience"]</a></li>
+                <li><a href="#contact" id="a_skills" onclick="contentLoader('contact');"><i class="fa fa-at"></i><br />@Localizer["Contact"]</a></li>
+            </ul>
+            <ul class="title box">
+                <li><a href="/ChangeLang?ln=en-US">EN</a></li>
+                <li><a href="/ChangeLang?ln=tr-TR">TR</a></li>
+            </ul>
+        </div>
+        <div class="box profile-content">
+            <div class="profile">
+                <div class="profile-bg"></div>
+                <div class="my-pic">
+                    <img src="~/img/me.jpg" title="Hossein Azami Andarabi" alt="Hossein Azami Andarabi" />
+                </div>
+                <div class="my-title title"><h1>Hossein Azami</h1></div>
+                <div class="my-subtitle" id="mySubtitle">@Localizer["JobName"]</div>
+                <div class="social-nw">
+                    <a target="_blank" href="https://www.linkedin.com/in/hossein-azami-7b90a3189/"><li class="fab fa-linkedin"></li></a>
+                    <a target="_blank" href="https://www.instagram.com/azami8920/"><li class="fab fa-instagram"></li></a>
+                    <a target="_blank" href="https://t.me/hosseinazami7"><li class="fab fa-telegram"></li></a>
+                    <a target="_blank" href="https://twitter.com/AndarabiAzami"><li class="fab fa-twitter"></li></a>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=905526278675"><li class="fab fa-whatsapp"></li></a>
+                </div>
+                <div class="lnk">
+                    <div class="lnk-item">
+                        <a href="/Resume-Hossein-Azami.pdf" target="_blank">@Localizer["DL-CV"] <i class="fas fa-download"></i></a>
+                    </div>
+                    <div class="lnk-item">
+                        <a href="#" onclick="contentLoader('contact');">@Localizer["Contact"] <i class="fa fa-at"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="box desk-container">
+        </div>*@
+
+    <div class="desk-content box" id="about">
+        <div class="title page-title">@Localizer["AboutMe"]</div>
+        <div>
+            @Localizer["Summary"]
+        </div>
+        <br />
+        <br />
+        <div><span class="title">@Localizer["Age"] : </span> @(DateTime.Now.Year - 1983)</div>
+        <div><span class="title">@Localizer["Residence"] : </span> @Localizer["Turkey"]</div>
+        <div><span class="title">@Localizer["Address"] : </span> @Localizer["MyAddress"]</div>
+        <div><span class="title">@Localizer["Status"] : </span> @Localizer["OpenToWork"]</div>
+    </div>
+    <div class="desk-content box" id="skills">
+        <div class="title page-title">@Localizer["Skills"]</div>
+        <div class="skill-area">
+            <div class="skill-area-title"><i class="fa fa-code orange"></i> @Localizer["Development"]</div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-90">
+                    <div class="overlay">90%</div>
+                </div>
+                <div class="skill-txt">C#</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-90">
+                    <div class="overlay">90%</div>
+                </div>
+                <div class="skill-txt">ASP.Net MVC</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-90">
+                    <div class="overlay">90%</div>
+                </div>
+                <div class="skill-txt">ASP.Net Core</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-90">
+                    <div class="overlay">90%</div>
+                </div>
+                <div class="skill-txt">ASP.Net WebAPI</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-80">
+                    <div class="overlay">80%</div>
+                </div>
+                <div class="skill-txt">Angular</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-70">
+                    <div class="overlay">70%</div>
+                </div>
+                <div class="skill-txt">Blazor</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-80">
+                    <div class="overlay">80%</div>
+                </div>
+                <div class="skill-txt">CSS3</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-70">
+                    <div class="overlay">70%</div>
+                </div>
+                <div class="skill-txt">Bootstrap</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-80">
+                    <div class="overlay">80%</div>
+                </div>
+                <div class="skill-txt">Entity Framework</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-80">
+                    <div class="overlay">80%</div>
+                </div>
+                <div class="skill-txt">.Net Framework</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-70">
+                    <div class="overlay">70%</div>
+                </div>
+                <div class="skill-txt">Design Patterns</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-70">
+                    <div class="overlay">70%</div>
+                </div>
+                <div class="skill-txt">NodeJS</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-80">
+                    <div class="overlay">80%</div>
+                </div>
+                <div class="skill-txt">SignalR</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-90">
+                    <div class="overlay">90%</div>
+                </div>
+                <div class="skill-txt">T-SQL MS SQL Server</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-90">
+                    <div class="overlay">90%</div>
+                </div>
+                <div class="skill-txt">ASP.Net WebAPI</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-90">
+                    <div class="overlay">90%</div>
+                </div>
+                <div class="skill-txt">GitHub</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-90">
+                    <div class="overlay">90%</div>
+                </div>
+                <div class="skill-txt">TFS</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-70">
+                    <div class="overlay">70%</div>
+                </div>
+                <div class="skill-txt">SEO &amp; SEM</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-100">
+                    <div class="overlay">100%</div>
+                </div>
+                <div class="skill-txt">Team Working</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-80">
+                    <div class="overlay">80%</div>
+                </div>
+                <div class="skill-txt">Team Managing</div>
+            </div>
+        </div>
+        <div class="skill-area">
+            <div class="skill-area-title"><i class="fa fa-language orange"></i> @Localizer["languages"]</div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-70">
+                    <div class="overlay">70%</div>
+                </div>
+                <div class="skill-txt">@Localizer["English"]</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-70">
+                    <div class="overlay">70%</div>
+                </div>
+                <div class="skill-txt">@Localizer["Turkish"]</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-100">
+                    <div class="overlay">100%</div>
+                </div>
+                <div class="skill-txt">@Localizer["Persian"]</div>
+            </div>
+            <div class="skill-item">
+                <div class="radialProgressBar progress-90">
+                    <div class="overlay">90%</div>
+                </div>
+                <div class="skill-txt">@Localizer["Azari"]</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="desk-content box" id="works">
+        <div class="title page-title">@Localizer["Experiences"] </div>
+        <div class="works">
+            <div class="work-item">
+                <div class="company">Global Testing®</div>
+                <div class="work-pos title">Senior Web Developer</div>
+                <div class="work-l-d"><span>Istanbul</span> <span class="work-date">2020/10 - Present</span> </div>
+                <div class="work-desk">
+                    ● Global Testing® Project
+                    <br />
+                    ● QKids Project
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="company">Respina Radyn IT Co.</div>
+                <div class="work-pos title">PROJECT MANAGER</div>
+                <div class="work-l-d"><span>Tehran</span> <span class="work-date">2010/8 - 2019/12</span> </div>
+                <div class="work-desk">
+                    ● Contract management software
+                    <br />
+                    ● Conference management software
+                    <br />
+                    ● CRM Software
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="company">Pasargad Machinery and Equipment Leasing</div>
+                <div class="work-pos title">DEVELOPER</div>
+                <div class="work-l-d"><span>Tehran</span> <span class="work-date">2010/3 - 2011/3</span> </div>
+                <div class="work-desk">Implementation of online rental payment system</div>
+            </div>
+            <div class="work-item">
+                <div class="company">Negin Resaneh Mihan Co.</div>
+                <div class="work-pos title">ANALYST & DEVELOPER</div>
+                <div class="work-l-d"><span>Tehran</span> <span class="work-date">2008/3 - 2010/5</span> </div>
+                <div class="work-desk">
+                    ● Production of daily bulletin production system
+                    <br />
+                    ● Apply mobna.com site to promote mobile phones
+                    <br />
+                    ● Build a news search engine based on Crawling
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="company">Tehran Municipality</div>
+                <div class="work-pos title">DEVELOPER</div>
+                <div class="work-l-d"><span>Tehran</span> <span class="work-date">2008/1 - 2010/1</span> </div>
+                <div class="work-desk">
+                    ● Tehran Municipality project control and management system implementation
+                    <br />
+                    ● Tehran Municipality Urban Development Project
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="company">Gostaresh Informatic Iranian</div>
+                <div class="work-pos title">DEVELOPER</div>
+                <div class="work-l-d"><span>Tehran</span> <span class="work-date">2007/1 - 2007/7</span> </div>
+                <div class="work-desk">Implementation of online regulation and payment system for Tosee Insurance company</div>
+            </div>
+            <div class="work-item">
+                <div class="company">Tadvin Farayand Co.</div>
+                <div class="work-pos title">DEVELOPER</div>
+                <div class="work-l-d"><span>Tehran</span> <span class="work-date">2010/3 - 2011/3</span> </div>
+                <div class="work-desk">Purchasing system and purchasing tracking from Tadvin financial and administrative systems set</div>
+            </div>
+            <div class="work-item">
+                <div class="company">Isatis IT Co.</div>
+                <div class="work-pos title">DEVELOPER</div>
+                <div class="work-l-d"><span>Yazd</span> <span class="work-date">2006/2 - 2006/10</span> </div>
+                <div class="work-desk">Parnian Madrese Smart School Project</div>
+            </div>
+            <div class="work-item">
+                <div class="company">Tajeran Pishro Co.</div>
+                <div class="work-pos title">DEVELOPER</div>
+                <div class="work-l-d"><span>Yazd</span> <span class="work-date">2004/9 - 2006/1</span> </div>
+                <div class="work-desk">Store site for selling Iranian products in the Middle East</div>
+            </div>
+        </div>
+    </div>
+    <div class="desk-content box" id="contact">
+        <div class="title page-title">Get In Touch</div>
+
+        <div><span class="title">@Localizer["Address"] : </span> @Localizer["MyAddress"]</div>
+        <div><span class="title">@Localizer["Email"] : </span> <a href="mailto:hossein@azami.ir">hossein@azami.ir</a></div>
+        <div><span class="title">@Localizer["Phone"] : </span> <a href="tel:0095526278675">(+90) 552 627 8675</a></div>
+        <div><span class="title">@Localizer["Status"] : </span> @Localizer["OpenToWork"]</div>
+    </div>
+</div>
+
