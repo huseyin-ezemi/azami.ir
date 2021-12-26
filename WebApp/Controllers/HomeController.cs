@@ -21,7 +21,6 @@ namespace WebApp.Controllers
         public IActionResult Index()
         {
             return View();
-            return Redirect("/en");
 
             if (_accessor.HttpContext.Connection.RemoteIpAddress.ToString() == "::1") return Redirect("/fa");
             var ipChecker = new CountryIPRanges().GetCountry(_accessor.HttpContext.Connection.RemoteIpAddress.ToString());

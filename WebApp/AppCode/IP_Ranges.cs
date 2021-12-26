@@ -5506,11 +5506,11 @@ namespace WebApp.AppCode
                 foreach (IPRange range in (List<IPRange>)item.GetValue(this, null))
                 {
                     var part = range.Begin.Split('.');
-                    range.Begin = $"{part[0]:D3}.{part[1]:D3}.{part[2]:D3}.{part[3]:D3}";
+                    range.Begin = $"{int.Parse(part[0]):D3}.{int.Parse(part[1]):D3}.{int.Parse(part[2]):D3}.{int.Parse(part[3]):D3}";
                     part = range.End.Split('.');
-                    range.End = $"{part[0]:D3}.{part[1]:D3}.{part[2]:D3}.{part[3]:D3}";
+                    range.End = $"{int.Parse(part[0]):D3}.{int.Parse(part[1]):D3}.{int.Parse(part[2]):D3}.{int.Parse(part[3]):D3}";
                     part = ip.Split('.');
-                    ip = $"{part[0]:D3}.{part[1]:D3}.{part[2]:D3}.{part[3]:D3}";
+                    ip = $"{int.Parse(part[0]):D3}.{int.Parse(part[1]):D3}.{int.Parse(part[2]):D3}.{int.Parse(part[3]):D3}";
                     if (ip.CompareTo(range.Begin) >= 1 && ip.CompareTo(range.End) <= -1)
                     {
                         return item.Name;
